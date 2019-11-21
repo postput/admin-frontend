@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+  <!-- logo -->
+  <div class="navbar-brand">
+    <a class="navbar-item">
+      <img src="https://cdn-storage.speaky.com/image5/4b34b792-ca51-41d3-8ae9-1c2a21d914a0.png?resize-height=50">
+    </a>
+  </div>
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link navbar-text" routerLink="/storages" >Storage list</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav" style="position: absolute; right: 20px;">
+      <li class="nav-item">
+        <a class="navbar-brand my-2 my-lg-0  nav-link" routerLink="/storages/create" >
+          <div><i class="fa fa-plus add-job-button"></i> Create a storage</div>
+        </a>
+      </li>
+    </ul>
+
+  </div>
+
+
+</nav>
+
+<router-outlet></router-outlet>
+
+
+<!-- footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        Made by Deviarch
+      </p>
+    </div>
+  </div>
+</footer>

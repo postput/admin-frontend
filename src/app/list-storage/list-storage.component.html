@@ -1,0 +1,61 @@
+<div class="container-fluid">
+
+  <table *ngIf="storages" mat-table
+         [dataSource]="storages" multiTemplateDataRows
+         class="mat-elevation-z8" >
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td (click)="expandedElement = expandedElement === element ? null : element" mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td (click)="expandedElement = expandedElement === element ? null : element" mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef> Type </th>
+      <td (click)="expandedElement = expandedElement === element ? null : element" mat-cell *matCellDef="let element"> {{element.type.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="uuid">
+      <th mat-header-cell *matHeaderCellDef> UUID </th>
+      <td (click)="expandedElement = expandedElement === element ? null : element" mat-cell *matCellDef="let element"> {{element.uuid}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let element">
+        <a (click)="onEdit(element.uuid)" class="action"> <i class="fa fa-edit"></i> </a>
+        <a (click)="onDelete(element.uuid)" class="action"> <i class="fa fa-trash-alt"></i> </a>
+      </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="expandedDetail">
+      <td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns.length">
+        <div class="example-element-detail"
+             [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+          <div style="max-width: 1px;">
+            <pre style="word-wrap: break-word; display: inline; overflow: hidden;">
+              {{element.config | json : 4}}
+            </pre>
+          </div>
+
+        </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let element; columns: displayedColumns;"
+        class="example-element-row"
+        [class.example-expanded-row]="expandedElement === element"
+        ></tr>
+
+    <tr mat-row *matRowDef="let element; columns: ['expandedDetail']" class="example-detail-row"></tr>
+
+  </table>
+
+
+</div>

@@ -1,0 +1,8 @@
+<div class="container snackbar">
+  <div class="row">
+    <div class="col-8" [className]="button ? 'col-8' : 'col'" [innerHTML]="html">
+    </div>
+    <div *ngIf="button" class="col-4" [innerHTML]="button">
+    </div>
+  </div>
+</div>

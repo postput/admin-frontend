@@ -1,0 +1,8 @@
+chart
+e2e
+js
+node_modules
+.git
+.idea
+server/node_modules
+server/.idea
