@@ -12,7 +12,7 @@ export class ApiService {
   };
 
   ports = {
-    api: 2001
+    api: environment.api_port
   };
 
   constructor(

@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  api_endpoint: 'https://www.api-job.com'
+  api_port: 2001,
+  api_endpoint: 'https://www.api-job.com',
 };
 
 /*
