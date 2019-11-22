@@ -1,0 +1,14 @@
+FROM node:10 as dev
+CMD ["npm","start"]
+EXPOSE 4200
+ARG WORKDIR=/home/node/app
+ARG DEPLOY_URL=http://localhost:2002/
+ENV DEPLOY_URL=$DEPLOY_URL
+ENV CONFIGURATION debug
+WORKDIR $WORKDIR
+COPY package.json .
+COPY package-lock.json .
+RUN npm i
+COPY angular.json .
+COPY tsconfig.json .
+COPY src src

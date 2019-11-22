@@ -2,7 +2,7 @@ FROM node:10 as dev
 CMD ["npm","start"]
 EXPOSE 4200
 ARG WORKDIR=/home/node/app
-ARG DEPLOY_URL=https://www.postput.com/
+ARG DEPLOY_URL=http://localhost:2002/
 ENV DEPLOY_URL=$DEPLOY_URL
 ENV CONFIGURATION debug
 WORKDIR $WORKDIR
