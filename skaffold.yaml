@@ -1,0 +1,12 @@
+apiVersion: skaffold/v1beta6
+kind: Config
+profiles:
+  - name : dev
+    build:
+      tagPolicy:
+        gitCommit: {}
+      artifacts:
+        - image: postput/admin-frontend
+          docker:
+            dockerfile: Dockerfile
+            target: dev
