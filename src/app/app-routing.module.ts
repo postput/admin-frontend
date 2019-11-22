@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'storages', component: ListStorageComponent },
   { path: 'storages/create', component: CreateStorageComponent },
   { path: 'storages/edit/:uuid', component: EditStorageComponent },
-  { path: '',   redirectTo: '/storages', pathMatch: 'full' },
+  { path: '',   redirectTo: '/storages', pathMatch: 'full' }
 ];
 
 @NgModule({

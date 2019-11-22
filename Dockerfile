@@ -4,6 +4,7 @@ EXPOSE 4200
 ARG WORKDIR=/home/node/app
 ARG DEPLOY_URL=https://www.postput.com/
 ENV DEPLOY_URL=$DEPLOY_URL
+ENV CONFIGURATION debug
 WORKDIR $WORKDIR
 COPY package.json .
 COPY package-lock.json .

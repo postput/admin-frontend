@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "prod": "node ./node_modules/@angular/cli/bin/ng build --prod --deploy-url $DEPLOY_URL --output-path dist"
+    "prod": "node ./node_modules/@angular/cli/bin/ng build --configuration=$CONFIGURATION --deploy-url $DEPLOY_URL --output-path dist"
   },
   "private": true,
   "dependencies": {
