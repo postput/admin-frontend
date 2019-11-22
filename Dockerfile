@@ -4,7 +4,7 @@ EXPOSE 4200
 ARG WORKDIR=/home/node/app
 ARG DEPLOY_URL=http://localhost:2002/
 ENV DEPLOY_URL=$DEPLOY_URL
-ENV CONFIGURATION debug
+ENV CONFIGURATION production
 WORKDIR $WORKDIR
 COPY package.json .
 COPY package-lock.json .
