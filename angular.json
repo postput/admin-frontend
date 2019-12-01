@@ -80,6 +80,9 @@
           "configurations": {
             "production": {
               "browserTarget": "admin:build:production"
+            },
+            "debug": {
+              "browserTarget": "admin:build:debug"
             }
           }
         },

@@ -1,4 +1,4 @@
-FROM node:10 as dev
+FROM node:10
 CMD ["npm","start"]
 EXPOSE 4200
 ARG WORKDIR=/home/node/app
