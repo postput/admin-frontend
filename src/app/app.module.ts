@@ -20,6 +20,10 @@ import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { SnackbarComponent } from './snackbar/snackbar.component';
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {MatInputModule} from '@angular/material/input';
+import { ListWebhookComponent } from './list-webhook/list-webhook.component';
+import { EditWebhookComponent } from './edit-webhook/edit-webhook.component';
+import { CreateWebhookComponent } from './create-webhook/create-webhook.component';
+import { MapPipe } from './map.pipe';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,11 @@ import {MatInputModule} from '@angular/material/input';
     EditStorageComponent,
     ListStorageComponent,
     ConfirmationComponent,
-    SnackbarComponent
+    SnackbarComponent,
+    ListWebhookComponent,
+    EditWebhookComponent,
+    CreateWebhookComponent,
+    MapPipe
   ],
   imports: [
     BrowserModule,

@@ -33,8 +33,6 @@ export class EditStorageComponent implements OnInit {
               private router: Router,
               public location: Location) { }
 
-  ngOnDestroy(): void {
-  }
 
   initEmptyForm(form: AbstractControl, storage: Storage) {
     form.get('name').setValue(storage.name);

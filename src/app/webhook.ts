@@ -1,33 +1,33 @@
-import {StorageType} from './storage-type';
 import {custom, date, identifier, list, object, serializable} from 'serializr';
-import {Webhook} from './webhook';
+import {WebhookType} from './webhook-type';
 
-
-export class Storage{
-
+export class Webhook{
   @serializable(identifier())
   id: number;
 
-  @serializable
-  uuid: string;
+  @serializable(list(object(WebhookType)))
+  webhookTypes: WebhookType[];
 
-  @serializable(list(object(Webhook)))
-  webhooks: Webhook[];
+  @serializable
+  storageId: number;
+
+  //@serializable(object(Storage))
+  storage: Storage;
 
   @serializable
   name: string;
 
   @serializable
-  typeId: number;
+  description: string;
 
-  @serializable(object(StorageType))
-  type: StorageType;
+  @serializable
+  token: string;
 
   @serializable(custom(config => config, config => config))
-  data: any;
+  config: any;
 
   @serializable(custom(data => data, data => data))
-  config: any;
+  data: any;
 
   @serializable(date())
   creationDate: Date;
@@ -35,5 +35,10 @@ export class Storage{
   @serializable(date())
   updatedOn: Date;
 
+  @serializable(date())
   deletionDate: Date;
-};
+
+  getTypes() {
+    return this.webhookTypes.map(type => type.name);
+  }
+}
