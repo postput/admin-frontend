@@ -8,6 +8,7 @@ import {StorageType} from "../storage-type";
 import {Storage} from "../storage";
 import {Webhook} from "../webhook";
 import {WebhookType} from "../webhook-type";
+import {v4} from 'uuid';
 
 @Component({
   selector: 'app-edit-webhook',
@@ -16,6 +17,7 @@ import {WebhookType} from "../webhook-type";
 })
 export class EditWebhookComponent implements OnInit {
 
+  uuid = v4;
   id: number;
   webhookTypes: WebhookType[] = [];
   webhook: Webhook;
@@ -44,6 +46,10 @@ export class EditWebhookComponent implements OnInit {
     form.get('webhookTypeIds').setValue(webhook.webhookTypes.map(wht => wht.id));
     form.get('config').setValue(JSON.stringify(webhook.config, undefined, 4));
     form.get('data').setValue(JSON.stringify(webhook.data, undefined, 4));
+  }
+
+  generateNewToken() {
+    this.webhookForm.get('token').setValue(this.uuid());
   }
 
   async ngOnInit() {

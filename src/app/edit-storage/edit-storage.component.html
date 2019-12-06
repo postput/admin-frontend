@@ -43,12 +43,13 @@
       <textarea matInput placeholder="{}" formControlName="config" class="form-group" class="form-control rounded-0" rows="15"></textarea>
     </mat-form-field>
 
-    <div *ngIf="storage">
+    <div *ngIf="storage" class="create-webhook">
       <label>Webhooks</label>
 
+      <button (click)="this.router.navigate(['webhooks', 'create', storage.id])" class="btn btn-primary" style="width: 100%; height: 50px;">create new webhook</button>
       <app-list-webhook [webhooks]="storage.webhooks"></app-list-webhook>
 
-      <button (click)="this.router.navigate(['webhooks', 'create', storage.id])" class="btn btn-primary" style="width: 100%; height: 50px;">create new webhook</button>
+
 
     </div>
 

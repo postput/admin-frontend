@@ -39,7 +39,9 @@ export class CreateStorageComponent implements OnInit, OnDestroy {
 
       const newStorageType = this.storageService.findStorageType(this.storageTypes, typeId);
 
-      this.storageForm.get('config').setValue(JSON.stringify(newStorageType.config, undefined, 4));
+      if (!this.storageForm.get('config').dirty) {
+        this.storageForm.get('config').setValue(JSON.stringify(newStorageType.config, undefined, 4));
+      }
     });
 
   }

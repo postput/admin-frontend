@@ -6,6 +6,7 @@ import {WebhookService} from "../webhook.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {SnackbarService} from "../snackbar.service";
 import {Location} from "@angular/common";
+import {v4} from 'uuid';
 
 @Component({
   selector: 'app-create-webhook',
@@ -14,6 +15,7 @@ import {Location} from "@angular/common";
 })
 export class CreateWebhookComponent implements OnInit {
 
+  uuid = v4;
   webhookTypes: WebhookType[] = [];
 
   webhookForm = this.fb.group({
@@ -41,11 +43,16 @@ export class CreateWebhookComponent implements OnInit {
     form.get('config').setValue(JSON.stringify(defaultConfig,undefined, 4));
   }
 
+  generateNewToken() {
+    this.webhookForm.get('token').setValue(this.uuid());
+  }
+
   async ngOnInit() {
 
     this.activatedRoute.params
       .subscribe(params => {
         this.webhookForm.get('storageId').setValue(params.storageId);
+        this.generateNewToken();
       });
 
     this.webhookTypes = await this.webhookService.getAllWebhookTypes();
