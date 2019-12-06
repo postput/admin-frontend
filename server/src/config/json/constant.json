@@ -1,0 +1,7 @@
+{
+  "ENVIRONMENT": {
+    "DEVELOPMENT": "development",
+    "PRODUCTION": "production"
+
+  }
+}

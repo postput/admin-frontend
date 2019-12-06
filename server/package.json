@@ -1,0 +1,53 @@
+{
+  "name": "job",
+  "version": "1.0.0",
+  "description": "Server web desktop",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/server.ts",
+    "debug": "ts-node-dev $NODE_DEBUG_OPTION src/server.ts",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/Arnadus/job.git"
+  },
+  "keywords": [
+    "job",
+    "jobs",
+    "google-map",
+    "maps",
+    "location",
+    "based"
+  ],
+  "author": "Arnaud De Backer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/Arnadus/job/issues"
+  },
+  "homepage": "https://gitlab.com/Arnadus/job#readme",
+  "dependencies": {
+    "@types/http-proxy-middleware": "^0.19.2",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "lodash": "^4.17.11",
+    "morgan": "^1.9.1",
+    "ntypescript": "^1.201706190042.1",
+    "prerender-node": "^3.2.4",
+    "pretty-error": "^2.1.1",
+    "reflect-metadata": "^0.1.13",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "serializr": "^1.5.1",
+    "ts-node-dev": "^1.0.0-pre.32",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.16.1",
+    "http-proxy-middleware": "^0.19.1",
+    "nodemon": "^1.18.9",
+    "ts-node": "^8.0.2",
+    "typescript": "^3.3.3"
+  }
+}
